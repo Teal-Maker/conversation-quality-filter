@@ -1,0 +1,34 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "conversation-quality-filter"
+version = "0.1.0"
+description = "Production-grade quality filters for multi-turn LLM conversation datasets"
+readme = "README.md"
+license = "Apache-2.0"
+requires-python = ">=3.10"
+authors = [{name = "Teal Maker Consulting"}]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = []
+
+[project.optional-dependencies]
+fast = ["rapidfuzz>=3.0.0"]
+dev = ["pytest>=7.0"]
+
+[project.scripts]
+conversation-quality-filter = "conversation_quality_filter.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/Teal-Maker/conversation-quality-filter"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
